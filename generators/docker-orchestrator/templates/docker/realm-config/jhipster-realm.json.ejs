@@ -2744,9 +2744,12 @@
       },
       "notBefore": 0,
       "groups": ["/Admins", "/Users"],
-      <%# --- SAATHRATRI CHANGE: Organization IDs for admin user --- %>
+      <%# --- SAATHRATRI CHANGE: the organizationIds user attribute feeds the organization_access
+          token claim (see the protocol mapper above). It ships EMPTY on purpose — populate it
+          with your application's organization UUIDs by overlaying this generated file
+          post-generation (e.g. copied in from a private data repo). --- %>
       "attributes": {
-        "organizationIds": "[ \"dab86326-9fd7-4942-897f-9f730e63118c\", \"32c52141-e66a-4019-9947-286d2b82f1b4\", \"acfad1dd-2570-4900-a5c2-8f496f88527c\", \"7ad12c14-c5c2-4720-a9ad-27ea789125c6\", \"a7c8d9e0-1f2b-4c3d-8a5e-6f7b8c9d0e1f\" ]"
+        "organizationIds": "[ ]"
       }
       <%# --- END SAATHRATRI CHANGE --- %>
     },
@@ -2777,9 +2780,11 @@
       },
       "notBefore": 0,
       "groups": ["/Users"],
-      <%# --- SAATHRATRI CHANGE: Organization IDs for regular user --- %>
+      <%# --- SAATHRATRI CHANGE: organization_access claim for the regular user — ships EMPTY;
+          overlay the generated file with your application's organization UUIDs (see the
+          admin user note above). --- %>
       "attributes": {
-        "organizationIds": "[ \"32c52141-e66a-4019-9947-286d2b82f1b4\", \"7ad12c14-c5c2-4720-a9ad-27ea789125c6\", \"a7c8d9e0-1f2b-4c3d-8a5e-6f7b8c9d0e1f\" ]"
+        "organizationIds": "[ ]"
       }
       <%# --- END SAATHRATRI CHANGE --- %>
     }
